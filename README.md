@@ -117,4 +117,3 @@ High-signal, reliable community resources.
 - [Make WordPress Core](https://make.wordpress.org/core/): Official WordPress Core development blog. Official engineering updates and deep dives.
 - [Ryan Welcher](https://ryanwelcher.com): Practical tutorials, blogs and examples for modern WP dev.
 - [WP Engine Resource Center](https://wpengine.com/resources/): Comprehensive resources for WordPress development. Fint articles, ebooks, guides and more.
-- [CSS-Tricks WordPress Articles](https://css-tricks.com/?s=&post_tag=wordpress): Front-end focused WP articles.
