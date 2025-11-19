@@ -98,11 +98,13 @@ Everything related to building, running, and debugging WP projects. Best-in-clas
 - [Create Block Theme](https://github.com/WordPress/create-block-theme): A WordPress plugin to create block themes.
 - [@wordpress/create-block](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/): An official tool for scaffolding a WordPress plugin that registers a block. It is largely inspired by create-react-app.
 - [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/): A collection of reusable scripts tailored for WordPress development. It is inspired by react-scripts and kcd-scripts.
-- [Query Monitor](https://querymonitor.com): Essential tool for debugging WordPress with a focus on presenting information in a useful manner.
 - [WordPress Playground](https://playground.wordpress.net): A browser-based instance for testing and developing WordPress projects. It is a platform that lets you run WordPress instantly on any device without a host.
 - [@wordpress/env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/): Official Docker-based dev environment for building and testing plugins and themes.
 - [WP-CLI](https://wp-cli.org): Command-line interface for managing WordPress installations.
+- [WordPress Studio](https://developer.wordpress.com/studio/): free, open-source app to install and manage multiple WordPress sites locally.
 - [LocalWP](https://localwp.com/): Fast, beginner-friendly local environment.
+- [Instant WordPress](https://instantwp.com/): free, standalone, portable WordPress development environment.
+- [Query Monitor](https://querymonitor.com): Essential tool for debugging WordPress with a focus on presenting information in a useful manner.
 - [PHPUnit](https://phpunit.de/): A tool for testing PHP code.
 - [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer): A tool for checking coding standards in PHP code. You can find codesniffer rules to enforce WordPress coding conventions at [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards).
 
@@ -116,4 +118,6 @@ High-signal, reliable community resources.
 
 - [Make WordPress Core](https://make.wordpress.org/core/): Official WordPress Core development blog. Official engineering updates and deep dives.
 - [Ryan Welcher](https://ryanwelcher.com): Practical tutorials, blogs and examples for modern WP dev.
+- [Nick Diego](https://nickdiego.com/posts/): Blogs and Projects related to WordPress. Nick is the creator of some cool modern WordPress plugins (icon block, block visibility etc).
+- [Misha Rudrastyh Digital](https://rudrastyh.com/blog): Programmatic development approaches with focus on WordPress.
 - [WP Engine Resource Center](https://wpengine.com/resources/): Comprehensive resources for WordPress development. Fint articles, ebooks, guides and more.
