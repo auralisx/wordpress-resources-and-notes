@@ -49,7 +49,7 @@ To make the services start automatically on boot, you can enable them using the 
 sudo systemctl enable --now nginx php-fpm mariadb redis
 ```
 
-> [!hint] systemd
+> [!NOTE]
 > To know how this works, you can read the wiki for systemd here: [systemd](https://wiki.archlinux.org/title/Systemd). Almost all linux distributions use systemd as their init system. It provides a powerful and flexible way to manage services and processes on a Linux system. With systemd, you can easily start, stop, restart, and monitor services, as well as manage dependencies between services and system resources.
 
 3. Configure [MariaDB](https://wiki.archlinux.org/title/MariaDB)
