@@ -18,7 +18,7 @@ Apache is still an excellent choice for many users as it is widely available, ea
 
 # Step-by-Step Setup (Arch Linux)
 
-1. Install packages
+## 1. Install packages
 I am on Arch linux so I will use pacman to install the packages. The package manager or package name can differ in different distributions so it's advisable to do some research before installing packages.
 
 > [!NOTE]
@@ -34,7 +34,7 @@ For caching, you can install redis or memcached. In arch, opcache comes bundled 
 sudo pacman -S redis php-redis
 ```
 
-2. Start Services
+## 2. Start Services
 Here we can start the services we just installed. You can start them manually or configure them to start automatically on boot.
 
 To start the services, you can use the following command:
@@ -52,4 +52,4 @@ sudo systemctl enable --now nginx php-fpm mariadb redis
 > [!NOTE]
 > To know how this works, you can read the wiki for systemd here: [systemd](https://wiki.archlinux.org/title/Systemd). Almost all linux distributions use systemd as their init system. It provides a powerful and flexible way to manage services and processes on a Linux system. With systemd, you can easily start, stop, restart, and monitor services, as well as manage dependencies between services and system resources.
 
-3. Configure [MariaDB](https://wiki.archlinux.org/title/MariaDB)
+## 3. Configure [MariaDB](https://wiki.archlinux.org/title/MariaDB)
