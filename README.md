@@ -119,7 +119,7 @@ Everything related to building, running, and debugging WP projects. Best-in-clas
 
 Guide and Blogs for specific topics
 
-- [Install WordPress on Ubuntu 24.04](https://spinupwp.com/hosting-wordpress-yourself-setting-up-sites/)
+- [Install WordPress on Ubuntu 24.04](https://spinupwp.com/hosting-wordpress-yourself-setting-up-sites/): Although titled "Install WordPress on Ubuntu 24.04", this guide provides a comprehensive step-by-step process for setting up a WordPress site on Ubuntu 24.04. It covers installtion, server level caching, cron, automated backups, security hardening, migration and even maintenance. It's a really great guide on professional administration of WordPress.
 
 ---
 

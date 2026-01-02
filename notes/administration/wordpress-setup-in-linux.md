@@ -34,8 +34,10 @@ sudo pacman -S nginx php php-fpm mariadb wp-cli
 For caching, you can install redis or memcached. In arch, opcache comes bundled with standard php distribution so you only need to enable it in php.ini file. Between redis and memcached, you can install either as you prefer. There are great resources available online to help you choose the right caching solution for your needs. For me, I prefer Redis because it's more lightweight and easier to configure than Memcached while still being more flexible. Redis is also cost effective at growth and integrates smoothly with managed WordPress hosting while delivering better performance than Memcached.
 
 ```
-sudo pacman -S redis php-redis
+sudo pacman -S valkey php-redis
 ```
+> [!NOTE]
+> Hosting providers are switching from Redis to Valkey due to a change in redis' licensing terms. Valkey is a new open source caching solution (forked Redis), which has already seen several stable releases and is gaining popularity among developers and hosting providers. In Arch, Redis is deprecated in 2025 and is replaced with Valkey.
 
 It is also recommended to install tools like ufw, fail2ban, and certbot for better security in the server environment.
 
