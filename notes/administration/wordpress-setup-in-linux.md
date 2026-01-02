@@ -1,7 +1,4 @@
-This note tries to deploy WordPress in a way that mirrors modern best industry standard practices used by professionals which is secure, maintainable and performant without overcomplicating the setup. It focuses on simplicity and ease of use while maintaining best practices for personal local setup.
-
-> [!NOTE]
-> The config files generated during the setup process are stored in `config` directory for future reference.
+This note focuses on simplicity and ease of use while maintaining best practices for personal local setup.
 
 # Industry standard architecture
 
@@ -106,7 +103,6 @@ disable_functions = exec,passthru,shell_exec,system,proc_open,popen,parse_ini_fi
 session.use_strict_mode = 1
 allow_url_fopen = Off
 
-zend_extension=opcache
 extension=pdo_mysql
 extension=mysqli
 
@@ -162,6 +158,30 @@ sudo nginx -t
 ```
 > `nginx -t` validates the configuration without starting nginx. If there are any errors, it will display them and exit with a non-zero status code. If there are no errors, it will display a success message and exit with a zero status code.
 
+# 7. Install WordPress
+Most guides recomment installing WordPress manually by using something like `wget` to download and extract it and then follow the WordPress installer in the web browser. But WP-CLI shines when it comes to WordPress management. There is noting wrong with the manual method but we can install WordPress using WP-CLI and do many more with it faster and it's more efficient. 
+
+To install WordPress using WP-CLI, navigate to the directory where you are going to serve the website or you have configured in Nginx server block. Then run the following command:
+
+```
+wp core download
+```
+Or you can specify the path where you want to install WordPress:
+
+```
+wp core download --path=/srv/http/wordpress
+```
+You can also easily create a wp-config.php file using WP-CLI:
+
+```
+wp core config --dbname=wordpress --dbuser=root --dbpass=password --dbhost=localhost --dbprefix=skel_
+```
+
+Finally, after you have created your wp-config.php file, you can install WordPress without going through the web installer:
+```
+wp core install --skip-email --url=http://localhost --title='WordPress Playground' --admin_user=username --admin_password=user_password --admin_email=admin@example.com
+```
+This method is faster and more efficient than the manual method as it can also be automated with a script. Most hosting providers offer a one-click WordPress installation option that uses WP-CLI under the hood.
 
 # References
 Look into these references for even more detailed information. I went through these references and found them useful. My notes just summarize what I learned and I applied for my local setup.
