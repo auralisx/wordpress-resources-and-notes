@@ -22,7 +22,9 @@ Built for developers working in the modern block-based WordPress ecosystem.
 
 4. [Development Tools & Environments](#development-tools--environments)
 
-5. [Community Articles & Blogs](#community-articles--blogs)
+5. [Guides](#guides)
+
+6. [Community Articles & Blogs](#community-articles--blogs)
 
 ---
 
@@ -109,6 +111,15 @@ Everything related to building, running, and debugging WP projects. Best-in-clas
 - [Query Monitor](https://querymonitor.com): Essential tool for debugging WordPress with a focus on presenting information in a useful manner.
 - [PHPUnit](https://phpunit.de/): A tool for testing PHP code.
 - [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer): A tool for checking coding standards in PHP code. You can find codesniffer rules to enforce WordPress coding conventions at [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards).
+
+---
+# Guides
+
+[![WordPress Guides](https://img.shields.io/badge/category-blogs-brown)](.)
+
+Guide and Blogs for specific topics
+
+- [Install WordPress on Ubuntu 24.04](https://spinupwp.com/hosting-wordpress-yourself-setting-up-sites/)
 
 ---
 

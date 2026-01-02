@@ -1,5 +1,8 @@
 This note tries to deploy WordPress in a way that mirrors modern best industry standard practices used by professionals which is secure, maintainable and performant without overcomplicating the setup. It focuses on simplicity and ease of use while maintaining best practices for personal local setup.
 
+> [!NOTE]
+> The config files generated during the setup process are stored in `config` directory for future reference.
+
 # Industry standard architecture
 
 | Layer | Component | Reasoning |
@@ -13,7 +16,8 @@ This note tries to deploy WordPress in a way that mirrors modern best industry s
 Apache is still an excellent choice for many users as it is widely available, easy to use, and has a large community of users and developers who can provide support and assistance. It is the default web server used by many shared hosting providers as nginx doesn't shine in shared environments. But for sites that expects a lot of traffic and speed matters, Nginx is a better choice. A lot of websites are migrating to Nginx. A more detailed explanation of the difference between Apache and Nginx can be found on [apache vs nginx vs litespeed](https://www.wpbeginner.com/opinion/apache-vs-nginx-vs-litespeed/) and [nginx-vs-apache](https://kinsta.com/blog/nginx-vs-apache/).
 
 > [!NOTE]
-> Hybrid setup (e.g., Nginx as reverse proxy in front of Apache, where nginx handles static content and apache handles dynamic content) are common in use but is not really needed for most cases thanks to a more mature softwares at present. Adding both adds complexity without significant benefit. You should only put apache behind nginx if you absolutely need it. The hybrid stack exists but it is not the best practice anymore. PHP comes included with a FastCGI process manager called PHP-FPM which can be used directly with Nginx. The flow with PHP-FPM is much the same, but it is simpler to configure PHP-FPM than Apache + mod_php. PHP-FPM also feels lighter weight and seems to use fewer resources.
+> Hybrid setup (e.g., Nginx as reverse proxy in front of Apache, where nginx handles static content and apache handles dynamic content) are common in use but is not really needed for most cases thanks to a more mature softwares at present. Adding both adds complexity without significant benefit. You should only put apache behind nginx if you absolutely need it. The hybrid stack exists but it is not the best practice anymore. 
+> PHP comes included with a FastCGI process manager called PHP-FPM which can be used directly with Nginx. The flow with PHP-FPM is much the same, but it is simpler to configure PHP-FPM than Apache + mod_php. PHP-FPM also feels lighter weight and seems to use fewer resources.
 
 # Step-by-Step Setup (Arch Linux)
 
@@ -151,7 +155,15 @@ To disable the site, simply remove the symlink:
 sudo unlink /etc/nginx/sites-enabled/example.conf
 ```
 
+> [!TIP]
+> Copy pasting configuration from generator tools is not recommended as it may contain unnecessary configurations that may cause issues. It is recommended to create your own configuration files from scratch. You can use the configuration tools provided by Digital Ocean and Mozilla to generate a basic configuration and then modify it according to your needs. If you are unable to start nginx, try 
+```
+sudo nginx -t
+```
+> `nginx -t` validates the configuration without starting nginx. If there are any errors, it will display them and exit with a non-zero status code. If there are no errors, it will display a success message and exit with a zero status code.
+
+
 # References
-Look into these references for even more detailed information. I went through these references and found them useful. My notes just summarize what I learned and I applied for my setup.
+Look into these references for even more detailed information. I went through these references and found them useful. My notes just summarize what I learned and I applied for my local setup.
 1. [SpinupWP](https://spinupwp.com/install-wordpress-ubuntu/)
 2. [Advanced Administration](https://developer.wordpress.org/advanced-administration/)
