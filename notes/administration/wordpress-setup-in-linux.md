@@ -19,7 +19,7 @@ Apache is still an excellent choice for many users as it is widely available, ea
 # Step-by-Step Setup (Arch Linux)
 
 > [!TIP]
-> For actual production environment, you should consider using a more stable linux distribution like debian, ubuntu or centos. Here, I am using Arch linux just because I have already installed it in my system and it's what I am most familiar with. And despite using a stable distribution, only security updates should be setup to be automatically applied. Not-security updates should be tested on staging server before intalling the updates. So, it doesn't matter that much what distribution you use in my opinion. I can disable updated for specific packages with pacman.conf, so Arch can as well be used as stable environment but requires a bit more effort.
+> For actual production environment, you should consider using a more stable linux distribution like debian, ubuntu or centos. Here, I am using Arch linux just because I have already installed it in my system and it's what I am most familiar with. And despite using a stable distribution, only security updates should be setup to be automatically applied. Non-security updates should be tested on staging server before intalling the updates. So, it doesn't matter that much what distribution you use in my opinion. I can disable updated for specific packages with pacman.conf, so Arch can as well be used as stable environment but requires a bit more effort.
 
 ## 1. Install packages
 I am on Arch linux so I will use pacman to install the packages. The package manager or package name can differ in different distributions so it's advisable to do some research before installing packages.
@@ -37,7 +37,7 @@ For caching, you can install redis or memcached. In arch, opcache comes bundled 
 sudo pacman -S valkey php-redis
 ```
 > [!NOTE]
-> Hosting providers are switching from Redis to Valkey due to a change in redis' licensing terms. Valkey is a new open source caching solution (forked Redis), which has already seen several stable releases and is gaining popularity among developers and hosting providers. In Arch, Redis is deprecated in 2025 and is replaced with Valkey.
+> Hosting providers are switching from Redis to Valkey due to a change in redis' licensing terms. Valkey is a new open source caching solution (community maintained fork of Redis), which has already seen several stable releases and is gaining popularity among developers and hosting providers. In Arch, Redis is deprecated in 2025 and is replaced with Valkey.
 
 It is also recommended to install tools like ufw, fail2ban, and certbot for better security in the server environment.
 
@@ -52,13 +52,13 @@ sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 Now, mariadb.service can be started or enabled. To start the services, you can use the following command:
 
 ```
-sudo systemctl start nginx php-fpm mariadb redis
+sudo systemctl start nginx php-fpm mariadb valkey
 ```
 
 To make the services start automatically on boot, you can enable them using the following commands:
 
 ```
-sudo systemctl enable --now nginx php-fpm mariadb redis
+sudo systemctl enable --now nginx php-fpm mariadb valkey
 ```
 
 > [!NOTE]
@@ -161,7 +161,7 @@ sudo nginx -t
 > `nginx -t` validates the configuration without starting nginx. If there are any errors, it will display them and exit with a non-zero status code. If there are no errors, it will display a success message and exit with a zero status code.
 
 # 7. Install WordPress
-Most guides recomment installing WordPress manually by using something like `wget` to download and extract it and then follow the WordPress installer in the web browser. But WP-CLI shines when it comes to WordPress management. There is noting wrong with the manual method but we can install WordPress using WP-CLI and do many more with it faster and it's more efficient. 
+Most guides recommend installing WordPress manually by using something like `wget` to download and extract it and then follow the WordPress installer in the web browser. But WP-CLI shines when it comes to WordPress management. There is nothing wrong with the manual method but we can install WordPress using WP-CLI and do much more with it faster and efficiently. In addition, wp-cli can be used in scripts to automate or even replace wordpress cron (which is inefficient) and more.
 
 To install WordPress using WP-CLI, navigate to the directory where you are going to serve the website or you have configured in Nginx server block. Then run the following command:
 
@@ -176,7 +176,7 @@ wp core download --path=/srv/http/wordpress
 You can also easily create a wp-config.php file using WP-CLI:
 
 ```
-wp core config --dbname=wordpress --dbuser=root --dbpass=password --dbhost=localhost --dbprefix=skel_
+wp core config --dbname=wordpress --dbuser=root --dbpass=password --dbhost=localhost --dbprefix=custom_prefix_
 ```
 
 Finally, after you have created your wp-config.php file, you can install WordPress without going through the web installer:
