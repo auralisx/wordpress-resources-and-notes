@@ -145,7 +145,7 @@ High-signal, reliable community resources.
 
 # Others
 
-[![Other Resources]](https://img.shields.io/badge/category-others-magenta)](.)
+[![Other Resources](https://img.shields.io/badge/category-others-magenta)](.)
 
 Other resources that are not specific to WordPress development but are still useful for developers:
 
